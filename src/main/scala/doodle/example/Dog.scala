@@ -3,6 +3,7 @@ package example
 
 import doodle.core._
 import doodle.backend.Canvas
+import doodle.jvm.Java2DCanvas
 
 object Dog {
    def draw(canvas: Canvas): Unit = {
@@ -37,3 +38,11 @@ object Dog {
   }
  
 }
+
+object testDog {
+ def main(args: Array[ String ]): Unit = {
+  val canvas = Java2DCanvas.canvas
+  Spiral.draw(canvas)
+ }
+}
+

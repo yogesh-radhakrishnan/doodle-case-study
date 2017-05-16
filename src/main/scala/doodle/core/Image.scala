@@ -44,6 +44,8 @@ sealed trait Image {
 
   val boundingBox: BoundingBox =
     this match {
+      case Triangle(l,h) =>
+        BoundingBox(-l / 2, h / 2, l / 2, -h / 2)
       case Circle(r) =>
         BoundingBox(-r, r, r, -r)
       case Rectangle(w, h) =>
@@ -57,9 +59,11 @@ sealed trait Image {
     }
 }
 
-case class Circle(val radius: Int) extends Image
+case class Circle(val radius: Double) extends Image
 
-case class Rectangle(val width: Int, val height: Int) extends Image
+case class Rectangle(val width: Double, val height: Double) extends Image
+
+case class Triangle(l: Double, b: Double) extends Image
 
 case class On(a: Image, b: Image) extends Image
 

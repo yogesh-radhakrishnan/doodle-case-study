@@ -2,8 +2,9 @@ package doodle
 package jvm
 
 import doodle.core._
+import Java2DCanvas._
 
-object Example {
+object Example extends App{
   def draw: Unit = {
     val canvas = Java2DCanvas.canvas
 
@@ -36,4 +37,6 @@ object Example {
     canvas.setStroke(Stroke(3.0, Color.black, Line.Cap.Round, Line.Join.Round))
     canvas.stroke()
   }
+
+  draw
 }

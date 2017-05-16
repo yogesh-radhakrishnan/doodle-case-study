@@ -4,4 +4,5 @@ package object syntax extends AngleSyntax with NormalizedSyntax with UnsignedByt
   object angle extends AngleSyntax
   object normalized extends NormalizedSyntax
   object uByte extends UnsignedByteSyntax
+  object eventStreamingImage extends EventStreamImageSyntax
 }
